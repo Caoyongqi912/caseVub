@@ -1,25 +1,40 @@
 <template>
-  <div>
-    <ul>
-      <li v-for="i in info.arr">{{ i }}</li>
-    </ul>
-    <button @click="add"/>
+  <div class="card">
+    <div class="card-header">
+      <div>主标题</div>
+      <div>副标题</div>
+    </div>
+
+    <div v-if="content" class="card-body">
+      <p>{{ content }}</p>
+    </div>
   </div>
+
 </template>
 
 <script setup lang="ts">
-import {reactive, readonly} from 'vue';
 
-let info = reactive<{ arr: string[] }>({arr: []})
-// const add = () => {
-//   setTimeout(() => {
-//     info.arr = ["A", "B", "C"]
-//   })
-// }
-let list = reactive({name: "cyq"})
-const read = readonly(list)
-const show = ()=>{
-  list.name = "im cyq"
+type Props = {
+  content?: string
+
 }
+defineProps<Props>()
+
+
 </script>
 
+<style scoped lang="less">
+@border: #ccc;
+.card {
+  border: 1px solid @border;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid @border;
+  }
+  &-body {
+    padding: 20px;
+  }
+}
+</style>
