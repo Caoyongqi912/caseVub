@@ -1,8 +1,13 @@
 import {createApp} from 'vue'
-import './style.css'
 import App from './App.vue'
-import Card from "./components/Hello.vue"
+import router from "./router";
+import Antd from "ant-design-vue"
+import {globalAxios} from './requests'
+import store from "./store";
 
 createApp(App)
-    .component("Card", Card)
+    .use(globalAxios)
+    .use(Antd)
+    .use(router)
+    .use(store)
     .mount('#app')
