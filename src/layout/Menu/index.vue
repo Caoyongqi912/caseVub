@@ -1,11 +1,10 @@
 <template>
-  menu
+  <a-layout-sider>
+    <p>im sider</p>
+  </a-layout-sider>
 </template>
 
-<script>
-export default {
-  name: "index"
-}
+<script setup lang="ts">
 </script>
 
 <style scoped>

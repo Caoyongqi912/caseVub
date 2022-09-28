@@ -4,8 +4,8 @@ import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router";
 const routes: RouteRecordRaw[] = [
     {
         path: "/",
-        name: "HomeView",
-        component: () => import("../views/HomeView.vue")
+        name: "layout",
+        component: () => import("../layout/index.vue")
     },
     {
         path: "/login",

@@ -1,22 +1,13 @@
 <template>
-  <div>
-    <p>{{ title }}</p>
-    <p>{{ data }}</p>
-    <button @click="toFather"/>
-  </div>
+  <a-layout>
+    <Header/>
+    <Sider/>
+  </a-layout>
 </template>
 
 <script setup lang="ts">
-
-type Props = {
-  title: string
-  data: number[]
-}
-defineProps<Props>()
-const emit = defineEmits(['toFather'])
-const toFather = () => {
-  emit('toFather',"我是子组件")
-}
+import Header from "./Header/index.vue"
+import Sider from "./Menu/index.vue"
 </script>
 
 <style lang="less" scoped>
